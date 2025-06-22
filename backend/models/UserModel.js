@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
     },
     base_id: {
       type: mongoose.Schema.Types.ObjectId,
-      // required: true,
+      required: true,
       ref: "Base",
     },
   },
