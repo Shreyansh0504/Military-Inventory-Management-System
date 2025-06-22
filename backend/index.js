@@ -10,6 +10,8 @@ import { purchaseRouter } from './routes/purchaseRoutes.js';
 import { assignmentRouter } from './routes/assignmentRoutes.js';
 import { expenseRouter } from './routes/expenditureRoutes.js';
 import { transferRouter } from './routes/transferRoutes.js';
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 dotenv.config();
