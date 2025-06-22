@@ -25,7 +25,7 @@ const __dirname = path.dirname(__filename);
 conn()
 app.use(
   cors({
-    origin: "https://bounce-taxi-booking-shreyansh.vercel.app",
+    origin: "https://shreyansh-military-ims.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
