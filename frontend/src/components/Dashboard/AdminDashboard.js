@@ -14,7 +14,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
   const getAllStats = async () => {
     try {
       const resBase = await axios.get(
-        "https://military-inventory-management-syste.vercel.app/api/v1/base/get-all-base",
+        "https://military-ims-backend.vercel.app/api/v1/base/get-all-base",
         {
           method: "POST",
           headers: {
@@ -24,7 +24,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
         }
       );
       const resAsset = await axios.get(
-        "https://military-inventory-management-syste.vercel.app/api/v1/asset/get-all-asset",
+        "https://military-ims-backend.vercel.app/api/v1/asset/get-all-asset",
         {
           method: "POST",
           headers: {
@@ -34,7 +34,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
         }
       );
       const resUsers = await axios.get(
-        "https://military-inventory-management-syste.vercel.app/api/v1/user/get-all-users",
+        "https://military-ims-backend.vercel.app/api/v1/user/get-all-users",
         {
           method: "POST",
           headers: {

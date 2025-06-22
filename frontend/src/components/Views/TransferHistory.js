@@ -15,7 +15,7 @@ const TransferHistory = ({ token, user }) => {
 
     try {
       const response = await fetch(
-        "https://military-inventory-management-syste.vercel.app/api/v1/transfer/get-transfer",
+        "https://military-ims-backend.vercel.app/api/v1/transfer/get-transfer",
         {
           method: "POST",
           headers: {

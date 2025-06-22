@@ -25,7 +25,7 @@ const Login = ({ onLogin }) => {
 
     try {
       const response = await fetch(
-        "https://military-inventory-management-syste.vercel.app/api/v1/user/login",
+        "https://military-ims-backend.vercel.app/api/v1/user/login",
         {
           method: "POST",
           headers: {

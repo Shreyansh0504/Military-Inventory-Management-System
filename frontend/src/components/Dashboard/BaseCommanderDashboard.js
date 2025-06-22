@@ -27,7 +27,7 @@ const BaseCommanderDashboard = ({
   const getAllStats = async () => {
     try {
       const resBase = await axios.post(
-        "https://military-inventory-management-syste.vercel.app/api/v1/base/get-base",
+        "https://military-ims-backend.vercel.app/api/v1/base/get-base",
         { base_id: user._doc.base_id },
         {
           headers: {
@@ -38,7 +38,7 @@ const BaseCommanderDashboard = ({
       );
 
       const resTransfers = await axios.post(
-        "https://military-inventory-management-syste.vercel.app/api/v1/transfer/get-transfer",
+        "https://military-ims-backend.vercel.app/api/v1/transfer/get-transfer",
         { base_id: user._doc.base_id },
         {
           headers: {
@@ -49,7 +49,7 @@ const BaseCommanderDashboard = ({
       );
 
       const resAssignments = await axios.post(
-        "https://military-inventory-management-syste.vercel.app/api/v1/assign/get-assignments",
+        "https://military-ims-backend.vercel.app/api/v1/assign/get-assignments",
         { base_id: user._doc.base_id },
         {
           headers: {

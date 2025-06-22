@@ -25,7 +25,7 @@ const CreatePurchase = ({ token, user }) => {
 
     try {
       const response = await fetch(
-        "https://military-inventory-management-syste.vercel.app/api/v1/purchase/create-purchase",
+        "https://military-ims-backend.vercel.app/api/v1/purchase/create-purchase",
         {
           method: "POST",
           headers: {

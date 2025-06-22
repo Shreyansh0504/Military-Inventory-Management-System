@@ -32,7 +32,7 @@ const Register = ({ onRegisterSuccess }) => {
 
     try {
       const response = await fetch(
-        "https://military-inventory-management-syste.vercel.app/api/v1/user/register",
+        "https://military-ims-backend.vercel.app/api/v1/user/register",
         {
           method: "POST",
           headers: {
