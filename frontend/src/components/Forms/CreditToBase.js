@@ -25,7 +25,7 @@ const CreditToBase = ({ token }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/expense/credit-expense",
+        "https://military-inventory-management-syste.vercel.app/api/v1/expense/credit-expense",
         {
           method: "POST",
           headers: {

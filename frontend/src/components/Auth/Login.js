@@ -24,13 +24,16 @@ const Login = ({ onLogin }) => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8080/api/v1/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://military-inventory-management-syste.vercel.app/api/v1/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 

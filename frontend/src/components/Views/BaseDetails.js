@@ -12,7 +12,7 @@ const BaseDetails = ({ token, user }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/base/get-base",
+        "https://military-inventory-management-syste.vercel.app/api/v1/base/get-base",
         {
           method: "POST",
           headers: {

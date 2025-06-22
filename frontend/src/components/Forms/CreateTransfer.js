@@ -26,7 +26,7 @@ const CreateTransfer = ({ token, user }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/transfer/create-transfer",
+        "https://military-inventory-management-syste.vercel.app/api/v1/transfer/create-transfer",
         {
           method: "POST",
           headers: {

@@ -25,7 +25,7 @@ const CreateBase = ({ token }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/base/create-base",
+        "https://military-inventory-management-syste.vercel.app/api/v1/base/create-base",
         {
           method: "POST",
           headers: {

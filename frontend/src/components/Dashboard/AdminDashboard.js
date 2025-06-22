@@ -8,13 +8,13 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
   const [stats, setStats] = useState({
     totalBases: 0,
     totalAssets: 0,
-    totalUsers: 0
+    totalUsers: 0,
   });
 
   const getAllStats = async () => {
     try {
       const resBase = await axios.get(
-        "http://localhost:8080/api/v1/base/get-all-base",
+        "https://military-inventory-management-syste.vercel.app/api/v1/base/get-all-base",
         {
           method: "POST",
           headers: {
@@ -24,7 +24,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
         }
       );
       const resAsset = await axios.get(
-        "http://localhost:8080/api/v1/asset/get-all-asset",
+        "https://military-inventory-management-syste.vercel.app/api/v1/asset/get-all-asset",
         {
           method: "POST",
           headers: {
@@ -34,7 +34,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
         }
       );
       const resUsers = await axios.get(
-        "http://localhost:8080/api/v1/user/get-all-users",
+        "https://military-inventory-management-syste.vercel.app/api/v1/user/get-all-users",
         {
           method: "POST",
           headers: {
@@ -47,7 +47,7 @@ const AdminDashboard = ({ user, token, activeSection, setActiveSection }) => {
         ...stats,
         totalBases: resBase.data.bases.length,
         totalAssets: resAsset.data.assets.length,
-        totalUsers: resUsers.data.users.length
+        totalUsers: resUsers.data.users.length,
       });
     } catch (error) {
       console.log(error);

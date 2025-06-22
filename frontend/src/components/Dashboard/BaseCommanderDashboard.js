@@ -1,17 +1,21 @@
-import BaseDetails from "../Views/BaseDetails"
-import TransferHistory from "../Views/TransferHistory"
-import PurchaseHistory from "../Views/PurchaseHistory"
-import { useEffect, useState } from "react"
+import BaseDetails from "../Views/BaseDetails";
+import TransferHistory from "../Views/TransferHistory";
+import PurchaseHistory from "../Views/PurchaseHistory";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-
-const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }) => {
+const BaseCommanderDashboard = ({
+  user,
+  token,
+  activeSection,
+  setActiveSection,
+}) => {
   const menuItems = [
     { id: "overview", label: "Overview", icon: "📊" },
     { id: "base-details", label: "Base Details", icon: "🏢" },
     { id: "transfers", label: "Transfer History", icon: "🔄" },
     { id: "purchases", label: "Purchase History", icon: "🛒" },
-  ]
+  ];
 
   const [stats, setStats] = useState({
     currentBalance: 0,
@@ -23,7 +27,7 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
   const getAllStats = async () => {
     try {
       const resBase = await axios.post(
-        "http://localhost:8080/api/v1/base/get-base",
+        "https://military-inventory-management-syste.vercel.app/api/v1/base/get-base",
         { base_id: user._doc.base_id },
         {
           headers: {
@@ -34,7 +38,7 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
       );
 
       const resTransfers = await axios.post(
-        "http://localhost:8080/api/v1/transfer/get-transfer",
+        "https://military-inventory-management-syste.vercel.app/api/v1/transfer/get-transfer",
         { base_id: user._doc.base_id },
         {
           headers: {
@@ -45,7 +49,7 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
       );
 
       const resAssignments = await axios.post(
-        "http://localhost:8080/api/v1/assign/get-assignments",
+        "https://military-inventory-management-syste.vercel.app/api/v1/assign/get-assignments",
         { base_id: user._doc.base_id },
         {
           headers: {
@@ -77,11 +81,11 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
   const renderContent = () => {
     switch (activeSection) {
       case "base-details":
-        return <BaseDetails token={token} user={user} />
+        return <BaseDetails token={token} user={user} />;
       case "transfers":
-        return <TransferHistory token={token} user={user} />
+        return <TransferHistory token={token} user={user} />;
       case "purchases":
-        return <PurchaseHistory token={token} user={user} />
+        return <PurchaseHistory token={token} user={user} />;
       default:
         return (
           <div className="overview-content">
@@ -130,7 +134,7 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
           </div>
         );
     }
-  }
+  };
 
   return (
     <div className="role-dashboard">
@@ -160,6 +164,6 @@ const BaseCommanderDashboard = ({ user, token, activeSection, setActiveSection }
       <div className="dashboard-content">{renderContent()}</div>
     </div>
   );
-}
+};
 
-export default BaseCommanderDashboard
+export default BaseCommanderDashboard;

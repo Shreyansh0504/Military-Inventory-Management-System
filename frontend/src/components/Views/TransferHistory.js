@@ -7,7 +7,7 @@ const TransferHistory = ({ token, user }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const [sortBy, setSortBy]=useState(false)
+  const [sortBy, setSortBy] = useState(false);
 
   const fetchTransfers = async () => {
     setLoading(true);
@@ -15,7 +15,7 @@ const TransferHistory = ({ token, user }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/v1/transfer/get-transfer",
+        "https://military-inventory-management-syste.vercel.app/api/v1/transfer/get-transfer",
         {
           method: "POST",
           headers: {
@@ -62,10 +62,15 @@ const TransferHistory = ({ token, user }) => {
             <h3>Transfer Records</h3>
             <div className="sortContainer">
               <span>Sort By Date</span>
-              <span className="sortBtn" onClick={()=>{
-                setSortBy(!sortBy);
-                setTransfers([...transfers].reverse());
-              }}>{sortBy?"Old to New": "New to Old"}</span>
+              <span
+                className="sortBtn"
+                onClick={() => {
+                  setSortBy(!sortBy);
+                  setTransfers([...transfers].reverse());
+                }}
+              >
+                {sortBy ? "Old to New" : "New to Old"}
+              </span>
             </div>
           </div>
           <div className="history-grid">
